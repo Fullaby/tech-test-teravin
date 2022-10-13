@@ -6,4 +6,5 @@ router.get('/employee-detail/:id',controller.getEmployeeDetail)
 router.put('/employee/:id',controller.editEmployee)
 router.delete('/employee/:id',controller.deleteEmployee)
 
+
 module.exports= router
