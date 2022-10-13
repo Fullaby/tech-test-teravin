@@ -1,0 +1,30 @@
+[
+    {
+        "name": "steven",
+        "email": "steven@gmail.com",
+        "mobile": "081271821",
+        "birthDate": "21-10-2022",
+        "address": "Batam"
+    },
+    {
+        "name": "Budi",
+        "email": "Budi@gmail.com",
+        "mobile": "14045",
+        "birthDate": "30-10-2022",
+        "address": "Medan"
+    },
+    {
+        "name": "Adi",
+        "email": "Adi@gmail.com",
+        "mobile": "14022",
+        "birthDate": "16-10-2022",
+        "address": "Pekan Baru"
+    },
+    {
+        "name": "Yanto",
+        "email": "Yanto@gmail.com",
+        "mobile": "911",
+        "birthDate": "10-10-2022",
+        "address": "Aceh"
+    }
+]

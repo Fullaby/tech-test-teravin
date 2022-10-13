@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; justify-content:center;">
+    <div style="padding: 20px;">
+        <div id="tableEmployee" style="padding: 10px; border-style: solid; ">
+            <div>
+            <div style="justify-content: space-between; display: flex;">
+                <div>
+                    <h1>List Employee</h1>
+                </div>
+                <div style="padding-top: 10px; margin-left: 100px;">
+                    <form id="searchBar">
+                        <input id="inputSearch" type="text" style="width: 500px; padding-left: 5px;" placeholder="Search by name">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <div style="padding-top: 10px; margin-left: 100px;">
+                    <button id="buttonAddEmployee">Add</button>
+                </div>
+            </div>
+            <div style="padding-top: 20px;">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Mobile</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                   <tbody id="tableRowEmployee"></tbody>
+                  </table>
+            </div>
+        </div>
+        </div>
+
+        <div id="addEmployee" style="border-style: solid ; width: 600px;">
+            <div>
+                <div>
+                    <h1>Add Employee</h1>
+                </div>
+                <div style="justify-content: space-between; display: flex;">
+                    <div style="margin-left: 20px;">
+                        <p>Name:</p>
+                        <p>Email:</p>
+                        <p>Mobile:</p>
+                        <p>Birthdate:</p>
+                        <p>Address:</p>
+                    </div>
+            <form id="formAddEmployee">
+                  <div style="margin-right: 20px;">
+                    <div>
+                        <input type="text" style="width: 300px;" id="inputAddName">
+                    </div>
+                    <div style="margin-top: 10px ;" >
+                        <input type="text" style="width: 300px;"  id="inputAddEmail">
+                    </div>
+                    <div style="margin-top: 10px ;">
+                        <input type="text" style="width: 300px;"  id="inputAddMobile">
+                    </div>
+                    <div style="margin-top: 10px ;" >
+                        <input type="date" style="width: 300px;"  id="inputAddBirthDate">
+                    </div>
+                    <div style="margin-top: 10px ;">
+                        <input type="text" style="width: 300px;"  id="inputAddAddress">
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div style="justify-content: end; display: flex; padding-right: 20px; padding-top: 10px; padding-bottom: 10px;">
+                <button style="margin-right: 10px;" id="cancelAddEmployee">Cancel</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        </div>
+
+     
+     
+        <div id="editEmployee" style="border-style: solid ; width: 600px;">
+            <div>
+                <div>
+                    <h1>Edit Employee</h1>
+                </div>
+                <div style="justify-content: space-between; display: flex;">
+                    <div style="margin-left: 20px;">
+                        <p>ID</p> 
+                        <p>Name:</p>
+                        <p>Email:</p>
+                        <p>Mobile:</p>
+                        <p>Birth Date:</p>
+                        <p>Address:</p>
+                    </div>
+                  <div style="margin-right: 20px;" id="rowEditEmployee">
+                   
+                  </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+        <div id="deleteEmployee" style="border-style: solid ; width: 600px;">
+            <div>
+                <div>
+                    <h1>Delete Employee</h1>
+                </div>
+                <div style="justify-content: space-between; display: flex;">
+                    <div style="margin-left: 20px;">
+                        <p>ID:</p> 
+                        <p>Name:</p>
+                        <p>Email:</p>
+                        <p>Mobile:</p>
+                        <p>Birth Date:</p>
+                        <p>Address:</p>
+                    </div>
+                  <div style="margin-right: 15px;" id="rowDelete" >
+                    
+                  </div>
+                </div>
+            </div>
+            <div style="margin-left: 10px ;">
+                <p>Are you sure want to delete this employee?</p>
+            </div>
+            <div style="justify-content: end; display: flex; padding-right: 20px; padding-bottom: 10px;" id="buttonOfChoiceDelete">
+               
+            </div>
+        </div>
+
+        <div id="detailEmployee" style="border-style: solid ; width: 600px;">
+            <div>
+                <div>
+                    <h1>Detail Employee</h1>
+                </div>
+                <div style="justify-content: space-between; display: flex;">
+                    <div style="margin-left: 20px;">
+                        <p>ID:</p> 
+                        <p>Name:</p>
+                        <p>Email:</p>
+                        <p>Mobile:</p>
+                        <p>Birth Date:</p>
+                        <p>Address:</p>
+                    </div>
+                  <div style="margin-right: 15px;" id="rowDetail">
+                   
+                  </div>
+                </div>
+            </div>
+            <div style="justify-content: end; display: flex; padding-right: 20px; padding-bottom: 10px;">
+                <button id="closeDetailEmployee">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script lang="js">
+
+        let url= "http://localhost:3000"
+
+        let cancelDelete= ()=>{
+            $("#tableEmployee").show()
+            $("#deleteEmployee").hide()
+        }
+
+        let showDeleteChoice=(id)=>{
+            $("#deleteEmployee").show()
+            $("#tableEmployee").hide()
+            showDetail(id)
+            let result=`
+            <button style="margin-right: 10px;" onClick="cancelDelete()" >Cancel</button>
+            <button onclick="deleteEmployee(${id})">Delete</button>
+            `
+            $("#buttonOfChoiceDelete").html(result)
+        }
+
+        let deleteEmployee=(id)=>{
+            $.ajax(`${url}/employee/${id}`,{
+                method: "DELETE"
+            })
+            .done((_)=>{
+                // console.log("Success delete")
+                $("#deleteEmployee").hide()
+                $("#tableEmployee").show()
+                fetchData()
+                swal("Success", "Employee Deleted", "success");
+            })
+            .fail((error)=>{
+                // console.log(error)
+            })
+        }
+
+        let showDetail=(id)=>{
+            $.ajax(`${url}/employee-detail/${id}`,{
+                method:"get"
+            })
+            .done((data)=>{
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                let result=`
+                <div>
+                        <span>${data.id}</span>
+                    </div>
+                    <div style="margin-top: 15px ;">
+                        <span>${data.name}</span>
+                    </div>
+                    <div style="margin-top: 15px ;" >
+                        <span>${data.email}</span>
+                    </div>
+                    <div style="margin-top: 15px ;">
+                        <span>${data.mobile}</span>
+                    </div>
+                    <div style="margin-top: 15px ;" >
+                        <span>${new Date(data.birthDate).toLocaleDateString("id-ID",options)}</span>
+                    </div>
+                    <div style="margin-top: 15px ;">
+                        <span>${data.address}</span>
+                    </div>
+                `
+                fetchData()
+                $("#rowDelete").html(result)
+               
+            })
+        }
+        
+        let showDetailOnDetail=(id)=>{
+            $.ajax(`${url}/employee-detail/${id}`,{
+                method:"get"
+            })
+            .done((data)=>{
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                let result=`
+                <div>
+                        <span>${data.id}</span>
+                    </div>
+                    <div style="margin-top: 15px ;">
+                        <span>${data.name}</span>
+                    </div>
+                    <div style="margin-top: 15px ;" >
+                        <span>${data.email}</span>
+                    </div>
+                    <div style="margin-top: 15px ;">
+                        <span>${data.mobile}</span>
+                    </div>
+                    <div style="margin-top: 15px ;" >
+                        <span>${new Date(data.birthDate).toLocaleDateString("id-ID",options)}</span>
+                    </div>
+                    <div style="margin-top: 15px ;">
+                        <span>${data.address}</span>
+                    </div>
+                `
+                fetchData()
+                $("#rowDetail").html(result)
+                $("#tableEmployee").hide()
+                $("#detailEmployee").show()
+            })
+        }
+
+        let cancelEdit=(event)=>{
+            event.preventDefault()
+            $("#editEmployee").hide()
+            $("#tableEmployee").show()
+        }
+
+        let formEditEmployee=(event,id)=>{
+            event.preventDefault()
+            let name= $("#inputEditName").val()
+            let email= $("#inputEditEmail").val()
+            let mobile= $("#inputEditMobile").val()
+            let birthDate= $("#inputEditBirthDate").val()
+            let address= $("#inputEditAddress").val()
+           
+            $.ajax(`${url}/employee/${id}`,{
+                method: "PUT",
+                data:{
+                    name,email,mobile,birthDate,address
+                }
+            })
+            .done((_)=>{
+                swal("Success", `Emloyee updated`, "success");
+                // console.log("Success")
+                $("#editEmployee").hide()
+                $("#tableEmployee").show()
+                fetchData()
+            })
+            .fail((error)=>{
+                swal("Error", `${error.responseJSON.message}`, "error");
+            })
+        }
+
+        let showEditEmployee=(id)=>{
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            $.ajax(`${url}/employee-detail/${id}`,{
+                method:"get"
+            })
+            .done((data)=>{
+                let result=`
+                <form onSubmit="formEditEmployee(event,${data.id})">
+                <div>
+                        <input type="text" value="${data.id}" disabled style="width: 300px;" id="inputEditId">
+                    </div>
+                    <div style="margin-top: 10px ;">
+                        <input type="text" value="${data.name}" style="width: 300px;" id="inputEditName">
+                    </div>
+                    <div style="margin-top: 10px ;" >
+                        <input type="text" value="${data.email}" style="width: 300px;" id="inputEditEmail">
+                    </div>
+                    <div style="margin-top: 10px ;">
+                        <input type="text" value="${data.mobile}" style="width: 300px;" id="inputEditMobile">
+                    </div>
+                    <div style="margin-top: 10px ;" >
+                        <input type="date" value="${new Date(data.birthDate).toLocaleDateString("en-CA")}" style="width: 300px;" id="inputEditBirthDate">
+                    </div>
+                    <div style="margin-top: 10px ;">
+                        <input type="text" value="${data.address}" style="width: 300px;" id="inputEditAddress">
+                    </div>
+                    <div style="justify-content: end; display: flex; padding-right: 20px; padding-top: 10px; padding-bottom: 10px;">
+                <button style="margin-right: 10px;" onClick="cancelEdit(event)">Cancel</button>
+                <button type="submit">Submit</button>
+                  </div>
+                </form>
+                `
+                fetchData()
+                $("#rowEditEmployee").html(result)
+                $("#tableEmployee").hide()
+                $("#editEmployee").show()
+            })
+        }
+
+        let fetchData= (searchByName="")=>{
+            $.ajax(`${url}/employee?searchByName=${searchByName}`,{
+                method: 'get'
+            })
+            .done((data)=>{
+                if(data.length == 0){
+                    let result= `List is Empty`
+                    $("#tableRowEmployee").html(result)
+                }else{
+                    let result= data.map((el)=>{
+                    // console.log(el)
+                    return `
+                      <tr>
+                        <td scope="row">${el.id}</td>
+                        <td>${el.name}</td>
+                        <td>${el.email}</td>
+                        <td>${el.mobile}</td>
+                        <td>
+                            <button onClick="showDetailOnDetail(${el.id})" >Detail</button>
+                            <button onClick="showEditEmployee(${el.id})">Edit</button>
+                            <button onClick="showDeleteChoice(${el.id})" >Delete</button>
+                        </td>
+                      </tr>
+                    `
+                })
+                $("#tableRowEmployee").html(result)
+            }
+               
+            })
+        }
+
+        $(document).ready(function(){
+            fetchData()
+            $("#addEmployee").hide()
+            $("#editEmployee").hide()
+            $("#deleteEmployee").hide()
+            $("#detailEmployee").hide()
+
+            $("#searchBar").on("submit",(event)=>{
+                event.preventDefault()
+                let searchByName= $("#inputSearch").val()
+                fetchData(searchByName)
+            })
+
+            $("#closeDetailEmployee").on("click",(event)=>{
+                event.preventDefault()
+                $("#detailEmployee").hide()
+                $("#tableEmployee").show()
+            })
+
+            $("#buttonDeleteEmployee").on("click",(event)=>{
+                event.preventDefault()
+                deleteEmployee()
+            })
+
+            $("#buttonAddEmployee").on("click",(event)=>{
+                event.preventDefault()
+                $("#addEmployee").show()
+                $("#tableEmployee").hide()
+            })
+
+            $("#cancelAddEmployee").on("click",(event)=>{
+                event.preventDefault()
+                $("#tableEmployee").show()
+                $("#addEmployee").hide()
+            })
+
+            $("#formAddEmployee").on("submit",(event)=>{
+                event.preventDefault()
+                let name= $("#inputAddName").val()
+                let email= $("#inputAddEmail").val()
+                let mobile= $("#inputAddMobile").val()
+                let birthDate= $("#inputAddBirthDate").val()
+                let address= $("#inputAddAddress").val()
+                // console.log(name,email,mobile,birthDate,address)
+                $.ajax(`${url}/employee`,{
+                    method: 'POST',
+                    data: {
+                        name,email,mobile,birthDate,address
+                    }
+                })
+                .done((data)=>{
+                    // console.log("success",data)
+                    $("#addEmployee").hide()
+                    $("#tableEmployee").show()
+                    swal("Success", "Employee Added", "success");
+                    fetchData()
+                })
+                .fail((error)=>{
+                    swal("Error", `${error.responseJSON.message}`, "error");
+                    // console.log(error)
+                })
+            })
+
+        })
+
+    </script>
+</body>
+</html>
