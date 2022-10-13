@@ -10,21 +10,21 @@
         "name": "Budi",
         "email": "Budi@gmail.com",
         "mobile": "14045",
-        "birthDate": "30-10-2022",
+        "birthDate": "2-10-2022",
         "address": "Medan"
     },
     {
         "name": "Adi",
         "email": "Adi@gmail.com",
         "mobile": "14022",
-        "birthDate": "16-10-2022",
+        "birthDate": "3-10-2022",
         "address": "Pekan Baru"
     },
     {
         "name": "Yanto",
         "email": "Yanto@gmail.com",
         "mobile": "911",
-        "birthDate": "10-10-2022",
+        "birthDate": "4-10-2022",
         "address": "Aceh"
     }
 ]
